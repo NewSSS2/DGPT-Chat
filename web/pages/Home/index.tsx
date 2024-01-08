@@ -100,7 +100,7 @@ const HomePage: Component = () => {
                 </Pill>
               </a>
               <A href="/guides/memory">
-                <Pill inverse>Memory Book DDJVDLKAVJDKL:AJVADKL:JVAD</Pill>
+                <Pill inverse>Memory Books</Pill>
               </A>
             </div>
           </TitleCard>
