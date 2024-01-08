@@ -57,7 +57,7 @@ const HomePage: Component = () => {
           aria-labelledby="homeTitle"
         >
           <span id="homeTitle" aria-hidden="true">
-            ReallyFinal<span class="text-[var(--hl-500)]">Bunny</span>
+            ReallyFinal<span class="text-[var(--hl-500)]">Bunny Local Test Worked 🐰</span>
           </span>
         </div>
 
