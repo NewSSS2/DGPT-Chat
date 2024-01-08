@@ -39,7 +39,7 @@ const LoginPage: Component = () => {
             </Button>
             &nbsp; to your account or&nbsp;
             <Button size="pill" onClick={() => setRegister(true)}>
-              Register
+              Register 222
             </Button>
             &nbsp;or continue as a guest.
           </div>
