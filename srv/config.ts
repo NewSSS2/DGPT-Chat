@@ -87,10 +87,10 @@ export const config = {
     pass: env('REDIS_PASSWORD', ''),
   },
   limits: {
-    upload: +env('IMAGE_SIZE_LIMIT', '10'),
-    payload: +env('JSON_SIZE_LIMIT', '10'),
-    subRate: +env('SUB_RATE_LIMIT', '15'),
-    msgPageSize: +env('MESSAGE_PAGE_SIZE', '500'),
+    upload: +env('IMAGE_SIZE_LIMIT', '50'),
+    payload: +env('JSON_SIZE_LIMIT', '50'),
+    subRate: +env('SUB_RATE_LIMIT', '35'),
+    msgPageSize: +env('MESSAGE_PAGE_SIZE', '1500'),
   },
   horde: {
     maxWaitSecs: +env('HORDE_WAIT_SECS', '120'),
@@ -128,18 +128,18 @@ export const config = {
 
   patreon: {
     redirect: env('PATREON_REDIRECT_URI', 'http://localhost:1234/oauth/patreon'),
-    campaign_id: env('PATREON_CAMPAIGN_ID', ''),
-    client_id: env('PATREON_CLIENT_ID', ''),
-    client_secret: env('PATREON_CLIENT_SECRET', ''),
-    access_token: env('PATREON_ACCESS_TOKEN', ''),
-    refresh_token: env('PATREON_REFRESH_TOKEN', ''),
+    campaign_id: env('PATREON_CAMPAIGN_ID', '78880'),
+    client_id: env('PATREON_CLIENT_ID', 'BgPgyloPBZp8qfVbW-Y3EgZiCxbBH0C44ezBPzieSwf6gl56Y4I5Ub7OACnjVA73'),
+    client_secret: env('PATREON_CLIENT_SECRET', 'O1Pn5NNWtM56qw2GsX7ZHD7cOgi1d9hwEJV-U1iSF07ec1DaS0Q5Bhsy-TBiGAbs'),
+    access_token: env('PATREON_ACCESS_TOKEN', 'iXl_DPXAZclLOVM0vv-ik5b74_7bdGcpCX1qq_vv5LA'),
+    refresh_token: env('PATREON_REFRESH_TOKEN', 'qK239qaqgaQdiGIPXQIvyG142NfX2jWAUBWGsbKlloU'),
   },
 
   inference: {
     flatChatCompletion: !!env('SIMPLE_COMPLETION', ''),
   },
   keys: {
-    REPLICATE: env('REPLICATE_KEY', ''),
+    REPLICATE: env('REPLICATE_KEY', 'r8_8BS8gXysx8FwtXkral2WmGqwUbCepZb1nF4hF'),
   },
   pipelineProxy: !!env('PIPELINE_PROXY', ''),
   publicTunnel: !!env('PUBLIC_TUNNEL', ''),

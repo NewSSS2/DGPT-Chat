@@ -245,19 +245,6 @@ const Message: Component<MessageProps> = (props) => {
                   data-user-time={isUser}
                 >
                   {new Date(props.msg.createdAt).toLocaleString()}
-                  <Show when={canShowMeta(props.msg, ctx.promptHistory[props.msg._id])}>
-                    <span
-                      class="text-600 hover:text-900 ml-1 cursor-pointer"
-                      onClick={() =>
-                        rootModalStore.info(
-                          'Message Information',
-                          <Meta msg={props.msg} history={ctx.promptHistory[props.msg._id]} />
-                        )
-                      }
-                    >
-                      <Info size={14} />
-                    </span>
-                  </Show>
                 </span>
               </span>
               <Switch>

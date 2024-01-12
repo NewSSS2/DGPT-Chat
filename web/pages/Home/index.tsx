@@ -42,23 +42,16 @@ const HomePage: Component = () => {
   return (
     <div>
       <Show when={!cfg.guest}>
-        <div class="flex text-orange-500" role="alert">
-          <AlertTriangle class="mb-2 mr-2" aria-hidden="true" />
+        <div class="flex text-orange-500">
+          <AlertTriangle class="mb-2 mr-2" />
           Your browser does not support local storage. You will need to login/register to use
-          Agnaistic.
+          DomGPT.
         </div>
       </Show>
 
       <div class="flex flex-col gap-4 text-lg">
-        <div
-          class="hidden justify-center text-6xl sm:flex"
-          role="heading"
-          aria-level="1"
-          aria-labelledby="homeTitle"
-        >
-          <span id="homeTitle" aria-hidden="true">
-            ReallyFinal<span class="text-[var(--hl-500)]">Bunny Local Test Worked 🐰</span>
-          </span>
+        <div class="hidden justify-center text-6xl sm:flex">
+          Dom<span class="text-[var(--hl-500)]">GPT</span>
         </div>
 
         <div class="w-full" ref={ref}>
@@ -66,14 +59,9 @@ const HomePage: Component = () => {
         </div>
 
         <Show when={cfg.config.patreon}>
-          <TitleCard
-            type="hl"
-            class="flex w-full items-center"
-            ariaRole="region"
-            ariaLabel="Models"
-          >
-            Agnaistic now hosts its own models! Use them for free by using the{' '}
-            <span class="font-bold">&nbsp;Agnaistic&nbsp;</span> service in your presets
+          <TitleCard type="hl" class="flex w-full items-center">
+            DomGPT now hosts its own models! Use them for free by using the{' '}
+            <span class="font-bold">&nbsp;DomGPT&nbsp;</span> service in your presets
           </TitleCard>
         </Show>
 
@@ -83,74 +71,88 @@ const HomePage: Component = () => {
           <Announcements list={announce.list} />
         </Show>
 
-        <div class="home-cards">
-          <TitleCard type="bg" title="Guides" class="" center ariaRole="region" ariaLabel="Guides">
-            <div class="flex flex-wrap justify-center gap-2">
-              <a>
-                <Pill inverse onClick={() => setSub(Sub.OpenAI)} ariaRole="link">
-                  OpenAI
-                </Pill>
-              </a>
-              <A href="/guides/novel">
-                <Pill inverse>NovelAI</Pill>
-              </A>
-              <a>
-                <Pill inverse onClick={() => setSub(Sub.Horde)} ariaRole="link">
-                  Horde
-                </Pill>
-              </a>
-              <A href="/guides/memory">
-                <Pill inverse>Memory Books</Pill>
-              </A>
-            </div>
-          </TitleCard>
+        <Card border>
+          <Show when={cfg.config.patreon}>
+            <TitleCard type="hl" class="flex w-full items-center">
+              New to DomGPT? Here's How to Get Started:{' '}
+            </TitleCard>
+          </Show>
+          <div class="gap-25 leading-40 flex flex-col">
+            <p style="margin-bottom: 20px; line-height: 1.2;">
+              <iframe
+                width="805"
+                height="452"
+                src="https://www.youtube.com/embed/QecfWB9LHeU?si=tHCJZYL7wZyQb-a4"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                style="margin-bottom: 20px;"
+              ></iframe>
+              <b class="highlight" style="padding: 0 2px;">
+                Welcome to DomGPT Chat!
+              </b>{' '}
+              - Our team is hard at work to create the internet’s first and best uncensored, BDSM
+              tailored AI chat experience. DomGPT Chat runs on our own custom model (DomGPT-2.1) and
+              not just putting a dress and lipstick on ChatGPT like some others try and fool their
+              users with.. This unique model, paired with the comprehensive chat tool we've created,
+              makes DomGPT Chat one of the most immersive submission experiences available. We're
+              improving it every week.
+            </p>
 
-          <TitleCard type="bg" title="Links" center ariaRole="region" ariaLabel="Links">
-            <div class="flex flex-wrap justify-center gap-2">
-              <a href="/discord" target="_blank">
-                <Pill inverse>Agnaistic Discord</Pill>
-              </a>
-
-              <A href="https://github.com/agnaistic/agnai" target="_blank">
-                <Pill inverse>GitHub</Pill>
-              </A>
-            </div>
-          </TitleCard>
-        </div>
-
-        <Show when={announce.list.length === 0}>
-          <Features />
-        </Show>
-
-        <Card border ariaRole="region" ariaLabel="Getting started">
-          <div class="mb-2 flex justify-center text-xl font-bold" aria-hidden="true">
-            Getting Started
-          </div>
-          <div class="flex flex-col items-center gap-2 leading-6">
-            <p>
-              Already have OpenAI, NovelAI, GooseAI, Scale, Claude? Head to the{' '}
-              <A class="link" href="/settings?tab=ai">
-                Settings Page
-              </A>{' '}
-              and configure your AI service.
+            <p style="margin-bottom: 15px; line-height: 1.2;">
+              <b class="highlight" style="padding: 0 4px;">
+                Character Creation and Customization
+              </b>{' '}
+              - Unleash your imagination with our character toolbox! Whether you’re picking from our
+              quirky gallery of characters or sculpting yxour own masterpiece, you have the power to
+              shape their look, voice, and vibe. Fancy a rendezvous with a celebrity crush? Or
+              crafting a one-of-a-kind confidant? The possibilities are as vast as your imagination!
+            </p>
+            <p style="margin-bottom: 15px; line-height: 1.2;">
+              <b class="highlight" style="padding: 0 4px;">
+                Scenarios & Event Editor
+              </b>{' '}
+              - Elevate your chats to epic proportions with this nifty feature. It’s like being a
+              director of your own kinky interactive movie, creating scenes and reactions for a
+              truly tailored experience. Whether you're orchestrating intricate plots or relishing
+              in spontaneous reactions, you can get as advanced as you want or keep things simple
+              with small custom features.
+            </p>
+            <p style="margin-bottom: 15px; line-height: 1.2;">
+              <b class="highlight" style="padding: 0 4px;">
+                Real-Time Voice Chat
+              </b>{' '}
+              - Elevate your experience to scary new heights with voice chats that bring your
+              Dominant to life in real-time. Perfect for immersive self-bondage scenarios or just
+              basic hands-free play, this feature adds an irresistible layer of realism to your
+              sessions, making every conversation feel like a true human-to-human chat.
+            </p>
+            <p style="margin-bottom: 15px; line-height: 1.2;">
+              <b class="highlight" style="padding: 0 4px;">
+                Group Chats
+              </b>{' '}
+              - Now you can create group chats with multiple AI characters or even invite and add
+              real users into your sessoins. DomGPT is the firrst to offer this type of advanced
+              multi-agent group chats and multiple domme expirince. We have a lot more ideas for
+              this in the near future too.
+            </p>
+            <p style="margin-bottom: 15px; line-height: 1.2;">
+              <b class="highlight" style="padding: 0 4px;">
+                Customize The AI
+              </b>{' '}
+              - You can now customize the AI from your chat settings, allowing you to better fine
+              tune the model to your liking, from adding more or less context / memory, custom
+              system prompts and instructions, and get super granular with crafting your ideal
+              experience.
             </p>
           </div>
         </Card>
+
+        <div class="home-cards"></div>
       </div>
-
-      <Switch>
-        <Match when={sub() === Sub.Horde}>
-          <HordeGuide close={closeSub} />
-        </Match>
-
-        <Match when={sub() === Sub.OpenAI}>
-          <OpenAIGuide close={closeSub} />
-        </Match>
-      </Switch>
     </div>
   )
 }
-
 export default HomePage
 
 const RecentChats: Component = (props) => {
@@ -165,10 +167,8 @@ const RecentChats: Component = (props) => {
   }))
 
   return (
-    <section class="flex flex-col" aria-labelledby="homeRecConversations">
-      <div id="homeRecConversations" class="text-lg font-bold" aria-hidden="true">
-        Recent Conversations
-      </div>
+    <div class="flex flex-col">
+      <div class="text-lg font-bold">Your Recent Chats</div>
       <div
         class="grid w-full grid-cols-2 gap-2 sm:grid-cols-4"
         classList={{ hidden: state.last.length === 0 }}
@@ -177,10 +177,6 @@ const RecentChats: Component = (props) => {
           {({ chat, char }) => (
             <>
               <div
-                role="link"
-                aria-label={`Chat with ${char.name}, ${elapsedSince(chat.updatedAt)} ago ${
-                  chat.name
-                }`}
                 class="bg-800 hover:bg-700 hidden h-24 w-full cursor-pointer rounded-md border-[1px] border-[var(--bg-700)] transition duration-300 sm:flex"
                 onClick={() => nav(`/chat/${chat._id}`)}
               >
@@ -203,7 +199,7 @@ const RecentChats: Component = (props) => {
                   </div>
                 </Show>
 
-                <div class="flex w-full flex-col justify-between text-sm" aria-hidden="true">
+                <div class="flex w-full flex-col justify-between text-sm">
                   <div class="flex flex-col px-1">
                     <div class="text-sm font-bold">{char.name}</div>
                     <div class="text-500 text-xs">{elapsedSince(chat.updatedAt)} ago</div>
@@ -220,14 +216,10 @@ const RecentChats: Component = (props) => {
               </div>
 
               <div
-                role="link"
-                aria-label={`Chat with ${char.name}, ${elapsedSince(chat.updatedAt)} ago ${
-                  chat.name
-                }`}
                 class="bg-800 hover:bg-700 flex w-full cursor-pointer flex-col rounded-md border-[1px] border-[var(--bg-700)] transition duration-300 sm:hidden"
                 onClick={() => nav(`/chat/${chat._id}`)}
               >
-                <div class="flex" aria-hidden="true">
+                <div class="flex">
                   <div class="flex items-center justify-center px-1 pt-1">
                     <AvatarIcon
                       noBorder
@@ -241,7 +233,7 @@ const RecentChats: Component = (props) => {
                   </div>
                 </div>
 
-                <div class="flex h-full w-full flex-col justify-between text-sm" aria-hidden="true">
+                <div class="flex h-full w-full flex-col justify-between text-sm">
                   <p class="line-clamp-2 max-h-10 overflow-hidden text-ellipsis px-1">
                     {chat.name}
                   </p>
@@ -257,38 +249,36 @@ const RecentChats: Component = (props) => {
           )}
         </For>
         <Show when={state.last.length < 4}>
-          <BorderCard href="/chats/create" ariaLabel="Start conversation">
-            <div aria-hidden="true">Start Conversation</div>
-            <Plus size={20} aria-hidden="true" />
+          <BorderCard href="/chats/create">
+            <div>Start Conversation</div>
+            <Plus size={20} />
           </BorderCard>
         </Show>
 
         <Show when={state.last.length < 3}>
-          <BorderCard href="/editor" ariaLabel="Create a character">
-            <div aria-hidden="true">Create a Character</div>
-            <WizardIcon size={20} aria-hidden="true" />
+          <BorderCard href="/editor">
+            <div>Create a Character</div>
+            <WizardIcon size={20} />
           </BorderCard>
         </Show>
 
         <Show when={state.last.length < 2}>
-          <BorderCard href="/settings" ariaLabel="Configure your AI services">
-            <div class="flex w-full items-center justify-center text-center" aria-hidden="true">
+          <BorderCard href="/settings">
+            <div class="flex w-full items-center justify-center text-center">
               Configure your AI Services
             </div>
-            <Settings size={20} aria-hidden="true" />
+            <Settings size={20} />
           </BorderCard>
         </Show>
       </div>
-    </section>
+    </div>
   )
 }
 
-const BorderCard: Component<{ children: any; href: string; ariaLabel?: string }> = (props) => {
+const BorderCard: Component<{ children: any; href: string }> = (props) => {
   const nav = useNavigate()
   return (
     <div
-      role="button"
-      aria-label={props.ariaLabel}
       class="bg-800 text-700 hover:bg-600 flex h-24 w-full cursor-pointer flex-col items-center justify-center border-[2px] border-dashed border-[var(--bg-700)] text-center transition duration-300"
       onClick={() => nav(props.href)}
     >
@@ -301,21 +291,13 @@ const Announcements: Component<{ list: AppSchema.Announcement[] }> = (props) => 
   let ref: any
   return (
     <>
-      <section class="flex flex-col gap-2" aria-labelledby="homeAnnouncements">
-        <div
-          id="homeAnnouncements"
-          class="flex items-end font-bold leading-[14px]"
-          aria-hidden="true"
-        >
-          Announcements
-        </div>
+      <div class="flex flex-col gap-2">
+        <div class="flex items-end font-bold leading-[14px]">Announcements</div>
         <For each={props.list}>
           {(item, i) => (
             <div class="rounded-md border-[1px] border-[var(--hl-500)]">
               <div class="flex flex-col rounded-t-md bg-[var(--hl-800)] p-2">
-                <div class="text-lg font-bold" role="heading">
-                  {item.title}
-                </div>
+                <div class="text-lg font-bold">{item.title}</div>
                 <div class="text-700 text-xs">{elapsedSince(item.showAt)} ago</div>
               </div>
               <div
@@ -328,49 +310,40 @@ const Announcements: Component<{ list: AppSchema.Announcement[] }> = (props) => 
         <div ref={ref} class="my-1 w-full">
           <Slot slot="content" parent={ref} />
         </div>
-      </section>
+      </div>
     </>
   )
 }
 
 const Features: Component = () => (
   <Card border>
-    <section aria-labelledby="homeNotableFeats">
-      <div id="homeNotableFeats" class="flex justify-center text-xl font-bold" aria-hidden="true">
-        Notable Features
-      </div>
-      <div class="flex flex-col gap-2 leading-6">
-        <p>
-          <b class="highlight">Agnaistic</b> is completely free to use. It is free to register. Your
-          data will be kept private and you can permanently delete your data at any time. We take
-          your privacy very seriously.
-        </p>
-        <p>
-          <b class="highlight">Register</b> to have your data available on all of your devices.
-        </p>
-        <p>Chat with multiple users and multiple characters at the same time</p>
-        <p>
-          Create <b class="highlight">Memory Books</b> to give your characters information about
-          their world.
-        </p>
-        <p>
-          <b class="highlight">Image generation</b> - Use Horde, NovelAI or your own Stable
-          Diffusion server.
-        </p>
-        <p>
-          <b class="highlight">Voice</b> - Give your characters a voice and speak back to them.
-        </p>
-        <p>
-          <b class="highlight">Custom Presets</b> - Completely customise the Generation settings
-          used to generate your responses.
-        </p>
-      </div>
-    </section>
+    <div class="flex justify-center text-xl font-bold">Notable Features</div>
+    <div class="flex flex-col gap-2 leading-6">
+      <p>
+        <b class="highlight">Register</b> to have your data available on all of your devices.
+      </p>
+      <p>Chat with multiple users and multiple characters at the same time</p>
+      <p>
+        Create <b class="highlight">Memory Books</b> to give your characters information about their
+        world.
+      </p>
+      <p>
+        <b class="highlight">Image generation</b> - Use Horde, NovelAI or your own Stable Diffusion
+        server.
+      </p>
+      <p>
+        <b class="highlight">Voice</b> - Give your characters a voice and speak back to them.
+      </p>
+      <p>
+        <b class="highlight">Custom Presets</b> - Completely customise the Generation settings used
+        to generate your responses.
+      </p>
+    </div>
   </Card>
 )
 
 const HordeGuide: Component<{ close: () => void }> = (props) => (
-  <Modal show close={props.close} title="Horde Guide" maxWidth="half" ariaLabel="Horde guide">
+  <Modal show close={props.close} title="Horde Guide" maxWidth="half">
     <div class="flex flex-col gap-2">
       <SolidCard bg="hl-900">
         <b>Important!</b> For reliable responses, ensure you have registered at{' '}
@@ -403,7 +376,7 @@ const HordeGuide: Component<{ close: () => void }> = (props) => (
 )
 
 const OpenAIGuide: Component<{ close: () => void }> = (props) => (
-  <Modal show close={props.close} title="OpenAI Guide" maxWidth="half" ariaLabel="OpenAI guide">
+  <Modal show close={props.close} title="OpenAI Guide" maxWidth="half">
     <div class="flex flex-col gap-2">
       <Card>
         OpenAI is a <b>paid service</b>. To use OpenAI, you to need provide your OpenAI API Key in

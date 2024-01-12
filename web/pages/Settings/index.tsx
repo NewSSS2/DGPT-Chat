@@ -81,13 +81,15 @@ const Settings: Component<{ footer?: (children: any) => void }> = (props) => {
     }
   })
 
-  const tabs: Tab[] = ['ai', 'ui', 'image', 'voice']
+  const tabs: Tab[] = ['ui', 'image', 'voice']
 
   if (state.loggedIn && (state.tiers.length > 0 || state.user?.billing)) {
     tabs.push('subscription')
   }
 
   if (!state.loggedIn) tabs.push('guest')
+
+  if (state.user?.admin) tabs.push('ai')
 
   const currentTab = createMemo(() => tabs[tab()])
 
