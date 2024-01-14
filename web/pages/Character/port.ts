@@ -9,7 +9,7 @@ import { CHUB_URL } from '/web/store/chub'
 
 type ImportFormat = 'tavern' | 'tavernV2' | 'ooba' | 'agnai'
 
-export const SUPPORTED_FORMATS = 'Agnaistic, CAI, TavernAI, TextGen, Pygmalion'
+export const SUPPORTED_FORMATS = 'DomGPT Chat, CAI, TavernAI, TextGen, Pygmalion'
 
 export const IMAGE_FORMATS: Record<string, boolean> = {
   apng: true,

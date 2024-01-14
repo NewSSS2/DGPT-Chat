@@ -190,12 +190,12 @@ export const guidance = wrap(async ({ userId, log, body, socketId }) => {
 
 export const inferenceModels = wrap(async (req) => {
   if (!req.fullUser?.defaultPreset) {
-    throw new StatusError(`No default preset configured - Check your Agnai user settings`, 400)
+    throw new StatusError(`No default preset configured - Check your DomGPT Chat user settings`, 400)
   }
 
   const preset = await store.presets.getUserPreset(req.fullUser?.defaultPreset!)
   if (!preset) {
-    throw new StatusError(`Default preset not found - Check your Agnai user settings`, 400)
+    throw new StatusError(`Default preset not found - Check your DomGPT Chat user settings`, 400)
   }
 
   return {

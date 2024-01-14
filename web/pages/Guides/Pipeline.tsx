@@ -7,7 +7,7 @@ const PipelineGuide: Component = () => {
     <>
       <PageHeader
         title="Pipeline Guide"
-        subtitle="How to install and use the Agnai Pipeline API"
+        subtitle="How to install and use the DomGPT Pipeline API"
       ></PageHeader>
       <div class="markdown" innerHTML={markdown.makeHtml(text)}></div>
     </>

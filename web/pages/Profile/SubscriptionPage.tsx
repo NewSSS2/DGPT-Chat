@@ -104,15 +104,8 @@ export const SubscriptionPage: Component = (props) => {
               <strong>Why subscribe?</strong>
             </p>
             <p>
-              Subscribing grants you access to higher quality models, quicker responses, and larger
-              contexts.
+              Coming Soon: Patreon Account Connection
             </p>
-            <p>
-              In the future you'll also have access to additional features! Such as: Image
-              generation, image storage, and with third-party apps like Discord, Slack, and
-              WhatsApp, and more!
-            </p>
-            <p>Subscribing allows me to spend more time developing and enhancing Agnaistic.</p>
           </SolidCard>
 
           <PatreonControls />

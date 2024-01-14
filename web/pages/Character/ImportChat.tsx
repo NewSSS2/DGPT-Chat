@@ -57,7 +57,7 @@ const ImportChatModal: Component<{
     } catch (ex) {
       const message = ex instanceof Error ? ex.message : 'Unknown error'
       toastStore.warn(
-        `Invalid chat log file format. Supported formats: Agnaistic, TavernAI (${message})`
+        `Invalid chat log file format. Supported formats: DomGPT Chat, TavernAI (${message})`
       )
       setJson()
     }
@@ -110,7 +110,7 @@ const ImportChatModal: Component<{
           label="JSON Lines File (.jsonl)"
           fieldName="json"
           accept="application/json-lines,application/jsonl,text/jsonl"
-          helperText="Supported formats: Agnaistic, TavernAI"
+          helperText="Supported formats: DomGPT Chat, TavernAI"
           required
           onUpdate={onSelectLog}
         />
