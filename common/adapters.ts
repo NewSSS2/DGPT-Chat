@@ -235,10 +235,10 @@ export const ADAPTER_LABELS: { [key in AIAdapter]: string } = {
   claude: 'Claude',
   goose: 'Goose AI',
   replicate: 'Replicate',
-  openrouter: 'OpenRouter',
+  openrouter: 'DomGPT',
   mancer: 'Mancer',
   petals: 'Petals',
-  agnaistic: 'Agnaistic',
+  agnaistic: 'Dom_GPT',
 }
 
 export const INSTRUCT_SERVICES: { [key in AIAdapter]?: boolean } = {

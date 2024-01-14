@@ -1,14 +1,14 @@
 {
-  "name": "agnai",
-  "version": "1.0.27",
-  "description": "Agnostic AI Chat",
+  "name": "DomGPT",
+  "version": "2.0.27",
+  "description": "DomGPT Chat 2.9",
   "keywords": [],
   "license": "AGPL-3.0",
   "bin": {
     "agnaistic": "./srv/bin.js",
     "agnai": "./srv/bin.js"
   },
-  "homepage": "https://github.com/agnaistic/agnai/issues",
+  "homepage": "",
   "files": [
     "poetry.lock",
     "pyproject.toml",
@@ -89,7 +89,7 @@
     "express": "^4.18.2",
     "gpt-3-encoder": "^1.1.4",
     "jsonwebtoken": "^9.0.0",
-    "localtunnel": "^2.0.2",
+    "localtunnel": "^1.8.3",
     "minimist": "^1.2.8",
     "mkdirp": "^2.1.4",
     "modern-screenshot": "^4.4.15",
