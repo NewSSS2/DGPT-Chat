@@ -87,10 +87,10 @@ export const config = {
     pass: env('REDIS_PASSWORD', ''),
   },
   limits: {
-    upload: +env('IMAGE_SIZE_LIMIT', '50'),
-    payload: +env('JSON_SIZE_LIMIT', '50'),
-    subRate: +env('SUB_RATE_LIMIT', '35'),
-    msgPageSize: +env('MESSAGE_PAGE_SIZE', '1500'),
+    upload: +env('IMAGE_SIZE_LIMIT', '10'),
+    payload: +env('JSON_SIZE_LIMIT', '10'),
+    subRate: +env('SUB_RATE_LIMIT', '15'),
+    msgPageSize: +env('MESSAGE_PAGE_SIZE', '500'),
   },
   horde: {
     maxWaitSecs: +env('HORDE_WAIT_SECS', '120'),
@@ -103,7 +103,7 @@ export const config = {
   },
   adapters: env(
     'ADAPTERS',
-    'agnaistic,novel,horde,kobold,openai,openrouter'
+    'agnaistic,novel,horde,kobold,openai,openrouter,scale,claude,ooba,goose,replicate,mancer'
   )
     .split(',')
     .filter((i) => !!i && i in ADAPTER_LABELS) as AIAdapter[],
@@ -127,11 +127,11 @@ export const config = {
   },
 
   patreon: {
-    redirect: env('PATREON_REDIRECT_URI', 'http://localhost:1234/oauth/patreon'),
+    redirect: env('PATREON_REDIRECT_URI', 'http://138.197.11.205:1234/oauth/patreon'),
     campaign_id: env('PATREON_CAMPAIGN_ID', '78880'),
     client_id: env('PATREON_CLIENT_ID', 'BgPgyloPBZp8qfVbW-Y3EgZiCxbBH0C44ezBPzieSwf6gl56Y4I5Ub7OACnjVA73'),
     client_secret: env('PATREON_CLIENT_SECRET', 'O1Pn5NNWtM56qw2GsX7ZHD7cOgi1d9hwEJV-U1iSF07ec1DaS0Q5Bhsy-TBiGAbs'),
-    access_token: env('PATREON_ACCESS_TOKEN', 'iXl_DPXAZclLOVM0vv-ik5b74_7bdGcpCX1qq_vv5LA'),
+    access_token: env('PATREON_ACCESS_TOKEN', 'Z-DBRSPHyeUcK60U_Ec6aVT8isid8J8u09Z-jhsi9nU'),
     refresh_token: env('PATREON_REFRESH_TOKEN', 'qK239qaqgaQdiGIPXQIvyG142NfX2jWAUBWGsbKlloU'),
   },
 
