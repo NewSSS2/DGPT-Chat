@@ -128,7 +128,7 @@ export const config = {
 
   patreon: {
     redirect: env('PATREON_REDIRECT_URI', 'http://localhost:1234/oauth/patreon'),
-    campaign_id: env('PATREON_CAMPAIGN_ID', '77328'),
+    campaign_id: env('PATREON_CAMPAIGN_ID', '78880'),
     client_id: env('PATREON_CLIENT_ID', 'BgPgyloPBZp8qfVbW-Y3EgZiCxbBH0C44ezBPzieSwf6gl56Y4I5Ub7OACnjVA73'),
     client_secret: env('PATREON_CLIENT_SECRET', 'O1Pn5NNWtM56qw2GsX7ZHD7cOgi1d9hwEJV-U1iSF07ec1DaS0Q5Bhsy-TBiGAbs'),
     access_token: env('PATREON_ACCESS_TOKEN', 'iXl_DPXAZclLOVM0vv-ik5b74_7bdGcpCX1qq_vv5LA'),
